@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>calculadora</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="calculadora">
+  <ion-input type="text" [(ngModel)]="display" readonly></ion-input>
+  <ion-grid class="button-grid">
+    <ion-row>
+      <ion-col size="3" *ngFor="let digit of digits">
+        <ion-button (click)="appendToDisplay(digit)">{{ digit }}</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col  size="3">
+        <ion-button (click)="appendToDisplay('+')">+</ion-button>
+      </ion-col>
+      <ion-col size="3">
+        <ion-button (click)="appendToDisplay('-')">-</ion-button>
+      </ion-col>
+      <ion-col size="3">
+        <ion-button (click)="appendToDisplay('*')">*</ion-button>
+      </ion-col>
+      <ion-col size="3">
+        <ion-button (click)="appendToDisplay('/')">/</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6">
+        <ion-button id="clear" (click)="clear()">C</ion-button>
+      </ion-col>
+      <ion-col size="6">
+        <ion-button id="calculate" (click)="calculate()">=</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>
+</ion-content>
